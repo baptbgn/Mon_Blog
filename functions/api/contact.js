@@ -35,3 +35,4 @@ export async function onRequestPost({ request, env }) {
     return new Response("Erreur serveur", { status: 500 });
   }
 }
+console.log("API KEY:", env.RESEND_API_KEY);
