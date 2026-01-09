@@ -1,4 +1,8 @@
 export async function onRequestPost({ request, env }) {
+  if (!env || !env.RESEND_API_KEY) {
+    return new Response("Clé API manquante ou env non défini", { status: 500 });
+  }
+
   try {
     const formData = await request.formData();
     const name = formData.get("name");
@@ -9,7 +13,6 @@ export async function onRequestPost({ request, env }) {
       return new Response("Champs manquants", { status: 400 });
     }
 
-    // Appel à Resend API
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -27,12 +30,12 @@ export async function onRequestPost({ request, env }) {
     });
 
     if (!resendResponse.ok) {
-      return new Response("Erreur lors de l'envoi du mail", { status: 500 });
+      const text = await resendResponse.text();
+      return new Response(`Erreur API Resend: ${text}`, { status: 500 });
     }
 
     return new Response("Message envoyé", { status: 200 });
   } catch (err) {
-    return new Response("Erreur serveur", { status: 500 });
+    return new Response(`Erreur serveur: ${err.message}`, { status: 500 });
   }
 }
-console.log("API KEY:", env.RESEND_API_KEY);
