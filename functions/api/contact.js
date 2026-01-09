@@ -26,7 +26,7 @@ export async function onRequestPost({ request, env }) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "no-reply@resend.com",
+        from: "resend._domainkey@baptistebergeon.fr",
         to: "baptiste.bergeon2008@gmail.com",
         subject: `Nouveau message depuis ${name}`,
         html: `<p><strong>Nom:</strong> ${name}</p>
