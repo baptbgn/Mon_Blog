@@ -26,11 +26,11 @@
   <input type="email" name="email" placeholder="Votre email" required>
   <textarea name="message" placeholder="Votre message" required></textarea>
 
-  <!-- honeypot anti-spam -->
+  <!-- honeypot invisible -->
   <input type="text" name="phone" style="display:none">
 
-  <button type="submit">Envoyer</button>
-  <span id="spinner" style="display:none; margin: left 10px;">⏳ Envoi...</span>
+  <button type="submit" id="submit-btn">Envoyer</button>
+  <span id="spinner" style="display:none; margin-left:10px;">⏳ Envoi...</span>
 </form>
 
 <div id="form-response" style="margin-top:10px; font-weight:bold;"></div>
@@ -44,10 +44,8 @@ const spinner = document.getElementById("spinner");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  // Désactiver le bouton + afficher spinner
   submitBtn.disabled = true;
   spinner.style.display = "inline";
-
   responseDiv.style.color = "black";
   responseDiv.textContent = "";
 
@@ -63,17 +61,16 @@ form.addEventListener("submit", async (e) => {
 
     if (res.ok) {
       responseDiv.style.color = "green";
-      responseDiv.textContent = text; // Message envoyé
+      responseDiv.textContent = text;
       form.reset();
     } else {
       responseDiv.style.color = "red";
-      responseDiv.textContent = text; // Erreur
+      responseDiv.textContent = text;
     }
   } catch (err) {
     responseDiv.style.color = "red";
     responseDiv.textContent = "Erreur de connexion, réessayez plus tard.";
   } finally {
-    // Réactiver le bouton et cacher le spinner
     submitBtn.disabled = false;
     spinner.style.display = "none";
   }

@@ -1,11 +1,10 @@
 export async function onRequestPost({ request, env }) {
   try {
     const formData = await request.formData();
-
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
-    const honeypot = formData.get("phone"); // honeypot invisible
+    const honeypot = formData.get("phone");
 
     if (honeypot) {
       return new Response("Spam détecté", { status: 400 });
@@ -19,6 +18,7 @@ export async function onRequestPost({ request, env }) {
       return new Response("Clé API manquante", { status: 500 });
     }
 
+    // 🔑 Utiliser l’expéditeur vérifié de ton compte Resend
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -26,7 +26,7 @@ export async function onRequestPost({ request, env }) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "resend._domainkey@baptistebergeon.fr",
+        from: "no-reply@<ton-compte>.resend.com", // remplace par ton expéditeur Resend vérifié
         to: "baptiste.bergeon2008@gmail.com",
         subject: `Nouveau message depuis ${name}`,
         html: `<p><strong>Nom:</strong> ${name}</p>
