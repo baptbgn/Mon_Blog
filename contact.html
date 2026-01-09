@@ -30,6 +30,7 @@
   <input type="text" name="phone" style="display:none">
 
   <button type="submit">Envoyer</button>
+  <span id="spinner" style="display:none; margin: left 10px;">⏳ Envoi...</span>
 </form>
 
 <div id="form-response" style="margin-top:10px; font-weight:bold;"></div>
@@ -37,12 +38,18 @@
 <script>
 const form = document.getElementById("contact-form");
 const responseDiv = document.getElementById("form-response");
+const submitBtn = document.getElementById("submit-btn");
+const spinner = document.getElementById("spinner");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  // Désactiver le bouton + afficher spinner
+  submitBtn.disabled = true;
+  spinner.style.display = "inline";
+
   responseDiv.style.color = "black";
-  responseDiv.textContent = "Envoi en cours...";
+  responseDiv.textContent = "";
 
   const formData = new FormData(form);
 
@@ -60,16 +67,20 @@ form.addEventListener("submit", async (e) => {
       form.reset();
     } else {
       responseDiv.style.color = "red";
-      responseDiv.textContent = text; // Affiche l’erreur
+      responseDiv.textContent = text; // Erreur
     }
   } catch (err) {
     responseDiv.style.color = "red";
     responseDiv.textContent = "Erreur de connexion, réessayez plus tard.";
+  } finally {
+    // Réactiver le bouton et cacher le spinner
+    submitBtn.disabled = false;
+    spinner.style.display = "none";
   }
 });
 </script>
 
-    <p>Vous pouvez aussi me contacter par email à <a href="mailto:baptiste.bergeon2008@gmail.com">
+    <p>Vous pouvez aussi me contacter par email à <a href="mailto:baptiste.bergeon2008@gmail.com">baptiste.bergeon2008@gmail.com</a></p>
   </section>
 
   <footer>
