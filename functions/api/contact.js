@@ -1,16 +1,22 @@
 export async function onRequestPost({ request, env }) {
-  if (!env || !env.RESEND_API_KEY) {
-    return new Response("Clé API manquante ou env non défini", { status: 500 });
-  }
-
   try {
     const formData = await request.formData();
+
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
+    const honeypot = formData.get("phone"); // honeypot invisible
+
+    if (honeypot) {
+      return new Response("Spam détecté", { status: 400 });
+    }
 
     if (!name || !email || !message) {
       return new Response("Champs manquants", { status: 400 });
+    }
+
+    if (!env || !env.RESEND_API_KEY) {
+      return new Response("Clé API manquante", { status: 500 });
     }
 
     const resendResponse = await fetch("https://api.resend.com/emails", {
@@ -20,7 +26,7 @@ export async function onRequestPost({ request, env }) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "baptiste.bergeon2008@gmail.com",
+        from: "no-reply@resend.com",
         to: "baptiste.bergeon2008@gmail.com",
         subject: `Nouveau message depuis ${name}`,
         html: `<p><strong>Nom:</strong> ${name}</p>
