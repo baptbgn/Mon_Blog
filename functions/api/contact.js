@@ -27,7 +27,7 @@ export async function onRequestPost({ request, env }) {
       body: JSON.stringify({
         from: "resend._domainkey@baptistebergeon.fr",
         to: "baptiste.bergeon2008@gmail.com",
-        subject: `Nouveau message depuis ${name}`,
+        subject: `Nouveau message de ${name}`,
         html: `<p><strong>Nom:</strong> ${name}</p>
                <p><strong>Email:</strong> ${email}</p>
                <p><strong>Message:</strong><br>${message}</p>`

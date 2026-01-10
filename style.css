@@ -1,26 +1,40 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #f9f9f9;
-  color: #333;
+/* =====================
+   RESET & BASE
+===================== */
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =====================
+   HEADER & NAVIGATION
+===================== */
 header {
   background: #0a192f;
   color: #fff;
-  padding: 10px 40px;
+  padding: 15px 40px;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 nav a {
@@ -33,6 +47,9 @@ nav a.active {
   border-bottom: 2px solid #64ffda;
 }
 
+/* =====================
+   HERO
+===================== */
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -40,21 +57,36 @@ nav a.active {
   color: #fff;
 }
 
+.hero h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+/* =====================
+   BUTTON
+===================== */
 .btn {
+  display: inline-block;
   background: #64ffda;
   color: #0a192f;
-  padding: 10px 20px;
+  padding: 12px 24px;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
 }
 
+/* =====================
+   CONTENT
+===================== */
 .content {
   padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
+/* =====================
+   GRID & CARDS
+===================== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -68,45 +100,113 @@ nav a.active {
   border-radius: 8px;
 }
 
+/* =====================
+   FORMS
+===================== */
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+/* =====================
+   FOOTER
+===================== */
 footer {
   text-align: center;
   padding: 20px;
   background: #0a192f;
   color: #fff;
 }
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
 
-.nav {
-  display: flex;
-  gap: 20px;
-}
-.main {
-  display: flex;
-  gap: 30px;
-}
+/* =====================
+   RESPONSIVE MOBILE
+===================== */
 @media (max-width: 768px) {
 
-  .nav {
-    flex-direction: column;
-    align-items: center;
+  header {
+    padding: 15px 20px;
   }
 
-  .main {
+  nav {
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
-body {
-  font-size: 16px;
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .content {
+    padding: 40px 15px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  button,
+  input,
+  textarea {
+    width: 100%;
+  }
 }
-h1 {
-  font-size: 1.8rem;
+/* =====================
+   DARK MODE
+===================== */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
 }
-button,
-input,
-textarea {
-  width: 100%;
+header.dark-mode {
+  background: #1f1f1f;
 }
+nav a.dark-mode {
+  color: #e0e0e0;
+}
+nav a.active.dark-mode {
+  border-bottom: 2px solid #bb86fc;
+}
+.hero.dark-mode {
+  background: #1f1f1f;
+}
+.btn.dark-mode {
+  background: #bb86fc;
+  color: #121212;
+}
+.card.dark-mode {
+  background: #1f1f1f;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+}
+footer.dark-mode {
+  background: #1f1f1f;
 }
