@@ -2,16 +2,19 @@
    RESET & VARIABLES
 ===================== */
 :root {
-  --bg-main: #f9f9f9;
+  --bg-main: #bbbdc3;        /* fond plus doux */
   --bg-dark: #0a192f;
   --bg-dark-2: #112240;
   --accent: #64ffda;
-  --text-main: #333;
-  --text-light: #ccd6f6;
+
+  --text-main: #1f2933;     /* texte plus sombre mais non agressif */
+  --text-light: #b8c1ec;
+
   --radius: 10px;
   --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
   --shadow-hover: 0 15px 40px rgba(0,0,0,0.12);
 }
+
 
 * {
   box-sizing: border-box;
@@ -138,7 +141,7 @@ nav a.active::after {
 }
 
 .card {
-  background: #fff;
+  background: #f8fafc; /* au lieu de blanc pur */
   padding: 30px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
