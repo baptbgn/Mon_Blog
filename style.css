@@ -243,3 +243,35 @@ footer {
   width: 40px;
   height: auto;
 }
+@media (prefers-color-scheme: dark) {
+   :root {
+    --bg-main: #0b1220;
+    --bg-dark: #020c1b;
+    --bg-dark-2: #020c1b;
+    --accent: #64ffda;
+
+    --text-main: #e5e7eb;
+    --text-light: #9ca3af;
+
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.5);
+    --shadow-hover: 0 15px 40px rgba(0,0,0,0.7);
+   }
+   body {
+    background: var(--bg-main)
+   }
+   .card {
+    background: #111827;
+   }
+  input,
+  textarea {
+  background: #020617;
+  color: var(--text-main);
+  border: 1px solid #1f2937;
+  }
+
+  footer {
+    background: #020617;
+  }
+}
+
+/* Fin du fichier style.css */
