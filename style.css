@@ -2,12 +2,12 @@
    RESET & VARIABLES
 ===================== */
 :root {
-  --bg-main: #bbbdc3;        /* fond plus doux */
+  --bg-main: #ffffff;        /* fond plus doux */
   --bg-dark: #0a192f;
   --bg-dark-2: #112240;
   --accent: #64ffda;
 
-  --text-main: #1f2933;     /* texte plus sombre mais non agressif */
+  --text-main: #4e77a1;     /* texte plus sombre mais non agressif */
   --text-light: #b8c1ec;
 
   --radius: 10px;
@@ -277,20 +277,42 @@ footer {
 h1, h2, h3 {
   letter-spacing: -0.02em;
 }
-/* Animation pour l'apparition des cartes */
+
 .card {
-  animation: fadeUp 0.6s ease both;
+  background: linear-gradient(180deg, #1a3e60, #0f3375);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  h2, h3 {
+    color: #ffffff;
+  }
+
+  /* visible par défaut */
+  opacity: 1;
+  transform: none;
+
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-/* Définition de l'animation fadeUp */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.js .card {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.js .card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 /* Fin du fichier style.css */

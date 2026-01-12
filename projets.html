@@ -6,6 +6,7 @@
   <title>Projets | Baptiste Bergeon</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <nav>
@@ -41,8 +42,33 @@
     </div>   
   </section>
 
+
+
   <footer>
     <p>© 2026 Baptiste Bergeon</p>
   </footer>
+  <script>
+document.documentElement.classList.add("js");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+    rootMargin: "0px 0px -80px 0px"
+  }
+);
+
+document.querySelectorAll(".card").forEach(card => {
+  observer.observe(card);
+});
+
+  </script>
 </body>
 </html>
