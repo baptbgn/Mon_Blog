@@ -2,12 +2,12 @@
    RESET & VARIABLES
 ===================== */
 :root {
-  --bg-main: #ffffff;        /* fond plus doux */
+  --bg-main: #ffffff;
   --bg-dark: #0a192f;
   --bg-dark-2: #112240;
   --accent: #64ffda;
 
-  --text-main: #4e77a1;     /* texte plus sombre mais non agressif */
+  --text-main: #4e77a1;
   --text-light: #b8c1ec;
 
   --radius: 10px;
@@ -141,7 +141,7 @@ nav a.active::after {
 }
 
 .card {
-  background: #f8fafc; /* au lieu de blanc pur */
+  background: #f8fafc;
   padding: 30px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
