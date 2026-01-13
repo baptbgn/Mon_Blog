@@ -4,19 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos | Baptiste Bergeon</title>
+  <link rel="icon" href="Favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="Favicon.svg">
   <link rel="stylesheet" href="style.css">
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ecf8b407155e4b418000617ac1b2f306"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
   <header>
-    <nav>
-      <h1>Baptiste Bergeon</h1>
+    <nav class="sidebar">
+      <div class="sidebar-top-wrapper">
+        <div class="sidebar-top">
+          <a href="index.html" class="logo__wrapper">
+            <img id="logo" src="logo.png" alt="Logo" class="logo-small">
+            <span class="hide company-name">
+              Baptiste Bergeon
+            </span>
+          </a>
+      </div>
+    </div>
+    <div class="sidebar-links">
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="projets.html">Projets</a></li>
         <li><a href="apropos.html" class="active">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+    </div>
+    <div class="separator"></div>     
     </nav>
   </header>
 
@@ -27,6 +41,22 @@
   </section>
 
   <footer>
+          <div class="footer-content">
+    <div class="footer-socials">
+      <a href="https://github.com/baptbgn" target="_blank" aria-label="GitHub">
+        <img src="github.svg" alt="GitHub">
+      </a>
+      <a href="https://instagram.com/bapt.bergeon" target="_blank" aria-label="Instagram">
+        <img src="instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61575074423343" target="_blank" aria-label="Facebook">
+        <img src="facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://www.linkedin.com/in/baptiste-bergeon/" target="_blank" aria-label="LinkedIn">
+        <img src="linkedin.svg" alt="LinkedIn">
+      </a>
+
+    </div>
     <p>© 2026 Baptiste Bergeon</p>
   </footer>
 </body>
