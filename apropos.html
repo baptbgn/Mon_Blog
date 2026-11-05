@@ -10,7 +10,7 @@
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ecf8b407155e4b418000617ac1b2f306"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
-  <header>
+   <header>
     <nav class="sidebar">
       <div class="sidebar-top-wrapper">
         <div class="sidebar-top">
@@ -26,7 +26,21 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="projets.html">Projets</a></li>
-        <li><a href="apropos.html" class="active">À propos</a></li>
+        <li class="nav-etudes">
+          <div class="nav-etudes-row">
+            <a href="etudes.html">Études</a>
+            <button class="nav-etudes-toggle" type="button"
+                    aria-label="Afficher les sous-catégories Études"
+                    aria-controls="nav-etudes-menu" aria-expanded="false">
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <ul class="nav-etudes-menu" id="nav-etudes-menu">
+            <li><a href="lycee.html">Lycée</a></li>
+            <li><a href="bts.html">BTS</a></li>
+          </ul>
+        </li>
+        <li><a href="apropos.html" class="active" aria-current="page">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -36,8 +50,8 @@
 
   <section class="content">
     <h2>À propos de moi</h2>
-    <p>Je suis Baptiste Bergeon, passionné par tout ce qui touche au domaine du vélo et le développement Web.
-       Ce portfolio présente mes travaux et mon parcours professionnel.</p>
+    <p>Je suis Baptiste Bergeon, passionné par tout ce qui touche au domaine de l'informatique, de la cybersécurité et du vélo.
+       Ce blog présente mes travaux et mon parcours professionnel. </p>
   </section>
 
   <footer>
@@ -59,5 +73,6 @@
     </div>
     <p>© 2026 Baptiste Bergeon</p>
   </footer>
+  <script src="./assets/scripts_et_styles/script.js"></script>
 </body>
 </html>

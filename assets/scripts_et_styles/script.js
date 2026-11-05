@@ -16,3 +16,29 @@ document.getElementById("download-cv")?.addEventListener("click", (event) => {
     window.location.href = "./assets/CV_Baptiste_Bergeon.pdf";
   }, 150);
 });
+// Menu « Études » : le mot « Études » ouvre sa page,
+// et la flèche affiche uniquement les deux sous-catégories.
+const etudesNav = document.querySelector('.nav-etudes');
+if (etudesNav) {
+  const etudesToggle = etudesNav.querySelector('.nav-etudes-toggle');
+
+  const setEtudesOpen = (isOpen) => {
+    etudesNav.classList.toggle('is-open', isOpen);
+    etudesToggle.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  etudesToggle.addEventListener('click', () => {
+    setEtudesOpen(!etudesNav.classList.contains('is-open'));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!etudesNav.contains(event.target)) setEtudesOpen(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && etudesNav.classList.contains('is-open')) {
+      setEtudesOpen(false);
+      etudesToggle.focus();
+    }
+  });
+}

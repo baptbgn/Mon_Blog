@@ -1,0 +1,14 @@
+CORRECTION DU MENU ÉTUDES - BAPTISTE
+
+Dans cette archive, les fichiers HTML sont directement à la racine comme dans ton dossier site.
+
+Fichiers modifiés :
+- projets.html : chargement du script du menu Études
+- apropos.html : chargement du script et correction de l’onglet actif
+- Bac.html : chargement du script du menu Études
+- contact.html : correction de l’onglet actif (Études était surligné à tort)
+
+Aucun changement dans style.css, script.js ni dans le contenu des pages.
+
+Installation : fais une sauvegarde, puis copie les quatre fichiers .html dans ton dossier site en les remplaçant. Ne supprime pas les autres fichiers de ton projet.
+Teste via Live Server et Ctrl+F5 avant de publier avec Git.

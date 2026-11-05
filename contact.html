@@ -26,8 +26,22 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="projets.html">Projets</a></li>
+        <li class="nav-etudes">
+          <div class="nav-etudes-row">
+            <a href="etudes.html">Études</a>
+            <button class="nav-etudes-toggle" type="button"
+                    aria-label="Afficher les sous-catégories Études"
+                    aria-controls="nav-etudes-menu" aria-expanded="false">
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <ul class="nav-etudes-menu" id="nav-etudes-menu">
+            <li><a href="lycee.html">Lycée</a></li>
+            <li><a href="bts.html">BTS</a></li>
+          </ul>
+        </li>
         <li><a href="apropos.html">À propos</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
       </ul>
     </div>
     <div class="separator"></div>     

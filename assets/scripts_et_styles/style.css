@@ -344,6 +344,173 @@ h1, h2, h3 {
   height: 20px;
   filter: invert(85%);
 }
+
+
+nav .nav-etudes {
+  position: relative;
+}
+
+nav .nav-etudes-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+nav .nav-etudes-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 29px;
+  padding: 0;
+  background: transparent;
+  color: var(--text-light);
+  border: 0;
+  border-radius: 5px;
+  font: inherit;
+  line-height: 1;
+  box-shadow: none;
+  transform: none;
+  transition: color .2s ease, background .2s ease;
+}
+
+nav .nav-etudes-toggle:hover,
+nav .nav-etudes-toggle:focus-visible {
+  background: rgba(100, 255, 218, .12);
+  color: var(--accent);
+  box-shadow: none;
+  transform: none;
+}
+
+nav .nav-etudes-toggle span {
+  display: inline-block;
+  font-size: 1.3rem;
+  transition: transform .2s ease;
+}
+
+nav .nav-etudes.is-open .nav-etudes-toggle span {
+  transform: rotate(180deg);
+}
+
+/* nav ul est horizontal dans le CSS existant :
+   cette règle force seulement le sous-menu à être vertical. */
+nav .nav-etudes-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: -12px;
+  z-index: 20;
+  min-width: 155px;
+  padding: 8px;
+  margin: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3px;
+  background: var(--bg-dark-2);
+  border: 1px solid rgba(100, 255, 218, .2);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .25);
+}
+
+nav .nav-etudes.is-open .nav-etudes-menu {
+  display: flex;
+}
+
+nav .nav-etudes-menu a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+nav .nav-etudes-menu a::after {
+  display: none;
+}
+
+nav .nav-etudes-menu a:hover,
+nav .nav-etudes-menu a.active,
+nav .nav-etudes-menu a:focus-visible {
+  background: rgba(100, 255, 218, .12);
+  color: var(--accent);
+}
+
+/* Cartes de présentation des études, distinctes des .card animées */
+.etudes-intro {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.etudes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.etudes-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #163e65, #0b2545);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.etudes-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.etudes-card h3 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.etudes-card p {
+  flex-grow: 1;
+  color: #d5e1ee;
+}
+
+.etudes-card .btn {
+  align-self: flex-start;
+  margin-top: 14px;
+}
+
+.etudes-label {
+  color: var(--accent);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.etudes-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.etudes-actions .btn {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  nav .nav-etudes-menu {
+    position: static;
+    min-width: 0;
+    margin-top: 6px;
+    padding: 4px 0 4px 14px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .etudes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Responsive footer */
 @media (max-width: 768px) {
   .footer-content {

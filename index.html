@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baptiste Bergeon | Portfolio</title>
+  <title>Baptiste Bergeon | Blog / Portfolio</title>
   <link rel="icon" href="./assets/Favicon.ico">
   <link rel="icon" type="image/svg+xml" href="./assets/Favicon.svg">
   <link rel="stylesheet" href="./assets/scripts_et_styles/style.css">
@@ -12,7 +12,7 @@
    <meta name="google-site-verification" content="QsSV-svTG8WCNh8EgOl1Zd_r9IVY8pXk7aUpSmpigcQ" />
 </head>
 <body>
-  <header>
+   <header>
     <nav class="sidebar">
       <div class="sidebar-top-wrapper">
         <div class="sidebar-top">
@@ -26,8 +26,22 @@
     </div>
     <div class="sidebar-links">
       <ul>
-        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
         <li><a href="projets.html">Projets</a></li>
+        <li class="nav-etudes">
+          <div class="nav-etudes-row">
+            <a href="etudes.html">Études</a>
+            <button class="nav-etudes-toggle" type="button"
+                    aria-label="Afficher les sous-catégories Études"
+                    aria-controls="nav-etudes-menu" aria-expanded="false">
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <ul class="nav-etudes-menu" id="nav-etudes-menu">
+            <li><a href="lycee.html">Lycée</a></li>
+            <li><a href="bts.html">BTS</a></li>
+          </ul>
+        </li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -37,7 +51,7 @@
   </header>
 
   <section class="hero">
-    <h2>Bienvenue sur mon portfolio,</h2>
+    <h2>Bienvenue sur mon blog,</h2>
     <p>Découvrez mes projets, mon parcours et mes compétences.</p>
     <a href="projets.html" class="btn">Voir mes projets</a>
     <a href="#" id="download-cv" class="btn">Télécharger mon CV (PDF)</a>

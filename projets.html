@@ -26,7 +26,21 @@
     <div class="sidebar-links">
       <ul>
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="projets.html" class="active" aria-current="page">Projets</a></li>
+        <li class="nav-etudes">
+          <div class="nav-etudes-row">
+            <a href="etudes.html">Études</a>
+            <button class="nav-etudes-toggle" type="button"
+                    aria-label="Afficher les sous-catégories Études"
+                    aria-controls="nav-etudes-menu" aria-expanded="false">
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <ul class="nav-etudes-menu" id="nav-etudes-menu">
+            <li><a href="lycee.html">Lycée</a></li>
+            <li><a href="bts.html">BTS</a></li>
+          </ul>
+        </li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -44,15 +58,15 @@
       </div>
       <div class="card">
         <h3>Projet Prévenir pour Agir</h3>
-        <p>Développement d'une application web pour le projet Prévenir pour Agir. J'ai crée ce projet dans le cadre de mes études, avec 5 autres élèves de ma classe. Le but est de sensibiliser les jeunes à la prévention des risques présents dans les établissements scolaires à travers des conférences.</p>
+        <p>Développement d'une application web pour le projet Prévenir pour Agir. J'ai crée ce projet dans le cadre de mes études, avec 5 autres élèves de ma classe de Terminale Métiers de la Sécurité. Le but est de sensibiliser les jeunes à la prévention des risques présents dans les établissements scolaires à travers des conférences.</p>
       </div>
       <div class="card">
         <h3>Faire la traversée de la France à vélo.</h3>
         <p>Un projet personnel consistant à traverser la France à vélo, en passant par les régions les plus belles et en documentant l'expérience.</p>
       </div>
       <div class="card">
-        <h3>Intégrer une école de mécanicien vélo</h3>
-        <p>Un projet académique visant à intégrer une école de mécanique/vente de vélos dans mon parcours académique.</p>
+        <h3>Intégrer une entreprise de cybersécurité ou d'informatique dans le cadre de mon parcours scolaire en tant que stagiaire.</h3>
+        <p>Un projet visant à intégrer une entreprise de cybersécurité ou d'informatique dans le cadre de mon parcours scolaire en tant que stagiaire.</p>
       </div>
     </div>   
   </section>
@@ -101,5 +115,6 @@ document.querySelectorAll(".card").forEach(card => {
 });
 
   </script>
+  <script src="./assets/scripts_et_styles/script.js"></script>
 </body>
 </html>
